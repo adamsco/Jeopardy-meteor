@@ -3,12 +3,12 @@ html, body, #wrapper {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: white;
 }
 
 #mainDiv{
     height: 100%;
     width: 100%;
+    background-color: black;
 }
 
 #topDiv{
@@ -19,7 +19,6 @@ html, body, #wrapper {
 }
 
 #gameBoard{
-    background-color: white;
     width: 100%;
     height: 90%;
     /*display: inline-block;*/
@@ -37,15 +36,20 @@ html, body, #wrapper {
     border: 1px solid black;
     border-radius: 10px;
     text-align: center;
+    /*background-color: white;*/
 }
-.categoryText{
+#categoryText{
     font-size: 18pt;
+    margin: 5px;
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
 }
 #questionCardColumn{
     width: 100%;
     height: 80%;
 }
 #questionCard{
+    background-color: white;
     margin: auto;
     width: 82%;
     height: 16%;
@@ -55,6 +59,17 @@ html, body, #wrapper {
     border-radius: 10px;
     text-align: center;
 }
-.questionText{
+#questionHeader{
     font-size: 18pt;
+    margin: auto;
+    margin-top: 22px;
+    font-weight: lighter;;
+    font-family: 'Roboto', sans-serif;
+}
+#questionText{
+      margin: 20px;
+      margin-top: 70px;
+      font-size: 36px;
+      font-weight: normal;
+      font-family: 'Roboto', sans-serif;
 }

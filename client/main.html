@@ -1,5 +1,6 @@
 <head>
   <title>Jeopardy</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -22,8 +23,8 @@
 
 <template name="Category">
     <div id="category">
-        <div id="categoryCard">
-            <p class="categoryText">{{name}}</p>
+        <div id="categoryCard" style="background-color: {{color}}">
+            <p id="categoryText">{{name}}</p>
         </div>
         <div id="questionCardColumn">
             {{#each questions}}
@@ -35,8 +36,8 @@
 </template>
 
 <template name="QuestionCard">
-    <div id="questionCard">
-        <p class="question-text">{{points}}p</p>
-        <h2 id="questionText" style="visibility: hidden;">{{question}}</h2>
+    <div id="questionCard" style="background-color: {{color}}">
+        <p id="questionHeader">{{points}}p</p>
+        <h2 id="questionText" style="display: none; visibility: hidden;">{{question}}</h2>
     </div>
 </template>

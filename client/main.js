@@ -24,6 +24,10 @@ Template.Category.helpers({
     },
     questions: function () {
         return this.questions;
+    },
+    color: function() {
+        console.log('coloring:'+ colorArray[parseInt(this.cat)-1])
+        return colorArray[parseInt(this.cat)-1]
     }
 });
 Template.QuestionCard.helpers({
@@ -32,37 +36,44 @@ Template.QuestionCard.helpers({
     },
     question: function () {
         return this.question;
+    },
+    color: function() {
+        console.log('coloring:'+ colorArray[parseInt(this.cat)-1])
+        return colorArray[parseInt(this.cat)-1]
     }
 });
 
+var colorArray = [
+    '#97b8ed','#e8adf7','#cef7ad','#f7adad','#c8adf7'
+]
+
+//click on QC event(s)
 Template.QuestionCard.events({
   'click'(event, instance) {
-        // increment the counter when button is clicked
-
         var real = instance.$(questionCard)
         var clone = real.clone( true )
 
         clone.css({"position": "absolute"});
         clone.appendTo($(mainDiv));
-        clone.css({"position": "absolute", "margin":"auto", "background": "white"});
+        clone.css({"position": "absolute", "margin":"auto"});
         clone.animate({'width' : '70%', 'height' : '70%', 'opacity' : 1, 'top' : "15%", 'left' : "15%"}, 1000, function(){
             clone.children('h2').first().css({"visibility":"visible", 'opacity':0})
             clone.children('p').first().animate({'font-size':'22pt'}, 700, function(){
                 //clone.children('h2').first().animate({'opacity':1}, 2000)
                 //fadein letter by letter
                 $(function() {
-
                   //get the welcome msg element
                   var $all_msg = clone.children('h2').first()
                   //get a list of letters from the welcome text
                   var $wordList = clone.children('h2').first().text().split("");
                   //clear the welcome text msg
                   clone.children('h2').first().text("");
-                  clone.children('h2').first().css({'opacity':1})
+
+                  clone.children('h2').first().css({'opacity':1, 'display': 'inline-block'})
+
 
                   //loop through the letters in the $wordList array
                   $.each($wordList, function(idx, elem) {
-                      console.log('loop')
                     //create a span for the letter and set opacity to 0
                     var newEL = $("<span/>").text(elem).css({
                       opacity: 0
@@ -76,7 +87,6 @@ Template.QuestionCard.events({
                       opacity: 1
                   }, 1000);
                   });
-
                 });
             })
 
