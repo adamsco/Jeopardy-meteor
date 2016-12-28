@@ -1,0 +1,60 @@
+/* CSS declarations go here */
+html, body, #wrapper {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: white;
+}
+
+#mainDiv{
+    height: 100%;
+    width: 100%;
+}
+
+#topDiv{
+    background-color: gray;
+    width: 100%;
+    height: 10%;
+    visibility: hidden;
+}
+
+#gameBoard{
+    background-color: white;
+    width: 100%;
+    height: 90%;
+    /*display: inline-block;*/
+    display: inline-flex;
+}
+#category{
+    width: 100%;
+    align-content: center;
+}
+
+#categoryCard{
+    margin: auto;
+    width: 90%;
+    height: 15%;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+.categoryText{
+    font-size: 18pt;
+}
+#questionCardColumn{
+    width: 100%;
+    height: 80%;
+}
+#questionCard{
+    margin: auto;
+    width: 82%;
+    height: 16%;
+    margin-top: 8%;
+    margin-bottom: 2%;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+.questionText{
+    font-size: 18pt;
+}

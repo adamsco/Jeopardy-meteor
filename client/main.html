@@ -1,0 +1,42 @@
+<head>
+  <title>Jeopardy</title>
+</head>
+
+<body>
+    {{> MainTemplate}}
+</body>
+
+<template name="MainTemplate">
+    <div id="mainDiv">
+        <div id="topDiv">
+            super-happy-fun-time-jeopardilicious
+        </div>
+        <div id="gameBoard">
+            {{#each category}}
+                {{> Category}}
+            {{/each}}
+        </div>
+    </div>
+</template>
+
+
+<template name="Category">
+    <div id="category">
+        <div id="categoryCard">
+            <p class="categoryText">{{name}}</p>
+        </div>
+        <div id="questionCardColumn">
+            {{#each questions}}
+                {{> QuestionCard}}
+            {{/each}}
+        </div>
+    </div>
+
+</template>
+
+<template name="QuestionCard">
+    <div id="questionCard">
+        <p class="question-text">{{points}}p</p>
+        <h2 id="questionText" style="visibility: hidden;">{{question}}</h2>
+    </div>
+</template>
